@@ -168,6 +168,7 @@ Daedalus.blueprint do |i|
       x.command make
     end
   end
+  gcc.add_library ffi
 
   udis = i.external_lib "vendor/udis86" do |l|
     l.cflags = ["-Ivendor/udis86"]
@@ -246,7 +247,6 @@ Daedalus.blueprint do |i|
 
   gcc.add_library zlib if Rubinius::BUILD_CONFIG[:vendor_zlib]
   gcc.add_library udis
-  gcc.add_library ffi
   gcc.add_library gdtoa
   gcc.add_library ltm
 
